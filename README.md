@@ -1,6 +1,5 @@
-# Identity-Safe-Deposit
+# Identity-Safe-Deposit: Riconoscimento Facciale con ESP32, Flask e STM32
 
-# Progetto: Riconoscimento Facciale con ESP32, Flask e STM32
 
 ## 🧠 Descrizione
 
