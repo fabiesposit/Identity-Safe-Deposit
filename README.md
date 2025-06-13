@@ -1,74 +1,95 @@
-# Identity-Safe-Deposit: Riconoscimento Facciale con ESP32, Flask e STM32
+# Identity-Safe-Deposit: Facial Recognition with ESP32, Flask, and STM32
 
+## 🧠 Description
 
-## 🧠 Descrizione
+This project implements a facial recognition system using an ESP32 camera, a Flask server for processing and web interface, and an STM32 module for hardware interaction. Images are sent via HTTP and compared with a gallery of known faces.
 
-Questo progetto realizza un sistema di riconoscimento facciale usando una telecamera ESP32, un server Flask per l'elaborazione e interfaccia web, e un modulo STM32 per l'interazione hardware. Le immagini vengono inviate via HTTP e confrontate con una galleria di volti noti.
+## ⚙️ Configuration
 
-## ⚙️ Configurazione
+- **Web dashboard**: http://192.168.28.111:5000/dashboard
 
-- **Dashboard web**: http://192.168.28.111:5000/dashboard
-- **Wi-Fi ESP32**:
+- **ESP32 Wi-Fi**:
+
   - SSID: Gianlu
+
   - Password: 12345678
-- **Indirizzo server impostato sulla scheda ESP32**: 192.168.28.111:5000
-- **Server Flask in esecuzione su**: 192.168.28.111:5000
+
+- **Server address set on the ESP32 board**: 192.168.28.111:5000
+
+- **Flask server running on**: 192.168.28.111:5000
 
 ---
 
-## 📁 Struttura del progetto
+## 📁 Project Structure
 
 esp32/
-└── LASTsketch/ # Script per ESP32
+
+└── LASTsketch/ # Script for ESP32
 
 server_flask/
-├── know_face/ # Immagini dei volti noti
-├── received_images/ # Immagini ricevute dalla ESP32 via POST
-├── templates/ # Template HTML per l'interfaccia web
-├── server.py # Server Flask principale
-└── README.txt # Questo file
+
+├── know_face/ # Images of known faces
+
+├── received_images/ # Images received from ESP32 via POST
+
+├── templates/ # HTML templates for the web interface
+
+├── server.py # Main Flask server script
+
+└── README.txt # This file
 
 stm32/
-└── progettostm32/ # Codice per STM32
+
+└── progettostm32/ # Code for STM32
 
 ---
 
-## 📂 Descrizione cartelle
+## 📂 Folder Description
 
 - **know_face/**
-  Inserire qui le immagini dei volti noti.
-  Ogni immagine deve essere rinominata con il nome del soggetto, così il nome verrà mostrato una volta riconosciuto.
+
+  Place images of known faces here.
+
+  Each image must be renamed with the subject's name, so the name will be displayed once recognized.
 
 - **received_images/**
-  Cartella in cui vengono salvate le immagini ricevute tramite richiesta POST dalla telecamera ESP32.
+
+  Folder where images received via POST request from the ESP32 camera are saved.
 
 - **LASTsketch/**
-  Contiene lo sketch per la programmazione dell'ESP32.
+
+  Contains the sketch for programming the ESP32.
 
 - **templates/**
-  Contiene i file HTML usati dal server Flask per il rendering delle pagine web.
+
+  Contains the HTML files used by the Flask server for rendering web pages.
 
 - **server.py**
-  Script principale del server Flask. Gestisce le richieste, l’elaborazione delle immagini e l’interfaccia web.
 
-## 🧩 Dipendenze
+  Main script for the Flask server. Manages requests, image processing, and the web interface.
 
-Per far funzionare il server Flask, installare le seguenti librerie:
+## 🧩 Dependencies
+
+To run the Flask server, install the following libraries:
 
 - flask
+
 - opencv-python
+
 - face-recognition
+
 - numpy
 
-Puoi installarle tutte con:
+You can install them all with:
 
 pip install -r requirements.txt
 
-## 👤 Autori
+## 👤 Authors
+
 Fontanella Gianluca
+
 Iovine Giovanna
+
 Grandioso Nicola
+
 Esposito Fabio
-
-
-
